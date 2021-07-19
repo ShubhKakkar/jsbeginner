@@ -1,0 +1,19 @@
+{
+  "name": "jsbeginner",
+  "version": "1.0.0",
+  "description": "Learning Js in depth",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShubhKakkar/jsbeginner.git"
+  },
+  "author": "Shubham Kakkar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShubhKakkar/jsbeginner/issues"
+  },
+  "homepage": "https://github.com/ShubhKakkar/jsbeginner#readme"
+}
