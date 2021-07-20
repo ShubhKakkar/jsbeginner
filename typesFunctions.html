@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>functionTypes</title>
+</head>
+
+<body>
+    <button class="btn">Hey I am a button</button>
+    <button class="submitMe">Don't click me.</button>
+</body>
+<script>
+    function doctorize(name) {
+        console.log(`Dr. ${name}`);
+    } //This one will work anyway weather defined before or after data.
+    doctorize("Shubham Kakkar");
+
+    const doctor = function () {
+        console.log("Hello doctor");
+    }; //This one will only work if defined after data due to hoisting.
+    doctor();
+
+    //Arrow functions or Anonymous function.
+    const inchesToCm = (inches) => {
+        return inches * 2.54;
+    };
+    //or you can write it like this
+    const mToKm = (m) => m / 1000;
+
+    const square = (value) => value ** 2;
+    console.log(square(2));
+
+    console.log(mToKm(1000));
+
+    console.log(inchesToCm(5));
+
+    function reverseString(str) {
+        // Step 1. Use the split() method to return a new array
+        var splitString = str.split(""); // var splitString = "hello".split("");
+        // ["h", "e", "l", "l", "o"]
+
+        // Step 2. Use the reverse() method to reverse the new created array
+        var reverseArray = splitString.reverse(); // var reverseArray = ["h", "e", "l", "l", "o"].reverse();
+        // ["o", "l", "l", "e", "h"]
+
+        // Step 3. Use the join() method to join all elements of the array into a string
+        var joinArray = reverseArray.join(""); // var joinArray = ["o", "l", "l", "e", "h"].join("");
+        // "olleh"
+
+        //Step 4. Return the reversed string
+        return joinArray; // "olleh"
+    }
+
+    reverseString("hello");
+
+    const add = (a, b = 3) => a + b;
+    console.log(add(10));
+    // console.log(makeName("Shubham", "Kakkar"));
+    const addName =  (firstName,lastName = "Kakkar") => `${firstName} ${lastName}`;
+    console.log(addName("Shubham"));
+
+    //Immediately invoked function expression. 
+    (function(age){
+        console.log("You are cool.");
+        console.log(age);
+    })(100);
+
+    //Methods in Javascript => When a property in an object is a function then it is known as a method.
+    const wes = {
+        sayHii : function(name = "Shubham"){
+            console.log(`Hii ${name}`);
+        }
+    }
+    wes.sayHii("Akhil");
+
+
+    // Two alternative ways of doing the same thing.
+
+    // const wes = {
+    //     sayHii(){
+    //         console.log("Hii Wes");
+    //     }
+    // }
+
+    // const wes = {
+    //     sayHii : () => {
+    //         console.log("Say Hii")
+    //     }
+    // }
+
+
+    //Callback function
+    document.querySelector("button").addEventListener('click',function(){
+        console.log("I got clicked");
+    })
+    const submitMe = () => console.log("Hey! I am the submit button. Why have you clicked me.");
+    document.querySelector('.submitMe').addEventListener('click',submitMe);
+    setTimeout(()=>{console.log("Hello World")},5000);
+</script>
+
+</html>
