@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debugging JavaScript</title>
+  </head>
+  <body></body>
+  <script>
+
+    //Using different types of consoles functions.
+
+    const people = [
+      { name: "Shubham", age: 23 },
+      { name: "Raghav", age: 21 },
+    ];
+
+    people.forEach((person, index) => {
+      if (person.name === "Raghav") {
+        console.warn("You are too small kiddo");
+        console.log(index);
+      }
+    });
+
+    people.forEach((person, index) => {
+      if (person.name === "Shubham") {
+        console.error(index);
+      }
+    });
+    console.table(people);
+
+    //console.count(); => To check how many times a function is running;
+    console.group("Doing some work");
+    console.log("Hello Wolrd");
+    console.warn("This is a warning");
+    console.groupEnd();
+    // console.groupCollapsed();
+
+    let children = [
+      { name: "Aakash", age: 5 },
+      { name: "Rohan", age: 10 },
+      { name: "Vinay", age: 15 },
+      { name: "Tanmay", age: 20 },
+    ];
+
+    console.log(children[2].age);
+
+    console.groupCollapsed("This is a group created for children");
+        children.forEach(function(child,index){
+            // debugger; This is run to create breakpoints and chheck the javascript line by line on the page itself.
+            console.log(`The ${index+1} child name is ${child.name}`);
+            console.log(`The ${index+1} child age is ${child.age}`);
+        })
+    console.groupEnd();
+
+    //Callstack
+    //It includes debugger and breakpoints with $0 for clicked value $0.value $1 for second last value clicked , $1.value to check the value of second last clicked element.
+    // In network tab we can find the files which are used to run the project and their respective information.
+    // We can use sources tab to get through different XHR an fetch request breakpoints as well as to check or commmand breakpoints on different Events happening on a website on the network window in the console panel. 
+  </script>
+</html>
