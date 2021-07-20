@@ -149,10 +149,40 @@
     setTimeout(function () {
         window.scrollTo(0, 300);
     }, 2);
-    setInterval(() => {
-        // window.scrollTo(0, 300);
-    }, 2);
+    // setInterval(() => {
+    //     // window.scrollTo(0, 300);
+    // }, 2);
     // navigator.vibrate([100, 30, 100, 30, 100, 30, 200, 30, 200, 30, 200, 30, 100, 30, 100, 30, 100]);
+
+
+    // Custom Functions
+    function calculateVal() {
+        //This is the function body.
+        console.log('Running');
+    }
+    calculateVal();
+    let sum = function (a, b) {
+        sum = a + b;
+        return sum;
+    }
+    let value = sum(2, 4);
+    console.log(value);
+
+    let bmi = function (weight, height) {
+        let result = weight / Math.pow(height, 2);
+        return result;
+    }
+    let wt = prompt("Enter your weight in kgs");
+    let ht = prompt("Enter your height in m");
+    let answer = bmi(wt, ht);
+    console.log(answer);
+    alert(`Your BMI is ${answer}`);
+
+    //name.toUpperCase();
+    //name.toLowerCase();
+
+    //function taxRate(amount,taxRate = 10)<-default tax rate set in case the user don't pass the tax rate or pass value of tax rate as undefined.
+
 </script>
 
 </html>
