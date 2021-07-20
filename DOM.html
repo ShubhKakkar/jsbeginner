@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <script>
+        // document.querySelector('p').innerText;
+        function init(){
+            // document.querySelector('p').innerText;
+            document.querySelector('p').textContent;
+            console.log(document.querySelector('h2'));
+            console.dir(document.querySelector('h2'));
+            document.querySelector("p").insertAdjacentText('beforeend','I love pizza');
+        }
+        document.addEventListener('DOMContentLoaded',init);
+    </script>
+    <h2>I am an h2 heading</h2>
+    <p>I am a new line</p>
+</body>
+</html>
