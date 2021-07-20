@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scopes in Javascript</title>
+  </head>
+  <body>
+    <script>
+      console.log("Working");
+      //Var is a variable that create global variables , it means they can be get by writing wndow.variableName;
+      // Globaly defined functions are also global;
+      callName = (firstName, age = 23) =>
+        console.log(`Hey ${firstName} your age is ${age}.`);
+
+      const age1 = 27;
+      var age = 34;
+      yellAge = (age = 25) => console.log(age);
+
+      if (1 === 1) {
+        var cool = true; // By default if we don't provide var , const or let it will be var and thus will have a global scope.
+      }
+      console.log(typeof cool);
+
+      const dog = "snikkers";
+
+      const logDog = (dog) => console.log(dog);
+
+      const go = (dog = "newDog") => console.log(logDog(dog)); // It will still console.log snikkers because javascript is a lexically scoped language.
+      //The log dog dosen't cares where it is called it cares where it is defined.
+
+      go();
+
+      logDog();
+      console.log("aaaaaa");
+      console.log(logDog("newDog1"));
+
+
+      window.iAmGlobal = "wes";
+    </script>
+  </body>
+</html>
