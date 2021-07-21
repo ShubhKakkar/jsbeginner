@@ -36,11 +36,19 @@
         myDiv.appendChild(myImage);
         myDiv.insertAdjacentText("afterbegin", "I love Pizza");
         // document.body.insertAdjacentHTML("beforebegin", '<p>I am a brand new title tag.</p>');
-        myDiv.insertAdjacentHTML('beforebegin', '<h1>I am a new heading</h1>');
+        myDiv.insertAdjacentHTML('beforebegin', `<ul>
+                <li>1st list</li>
+                <li>2nd list</li>
+                </ul>`);
+        const desc = prompt("Enter a descrpion");
+        myDiv.insertAdjacentHTML('beforeend', `<div class="box">${desc}</div >`);
+        // myDiv.innerHTML = "<h1>I am changed.</h1>";
 
         const li1 = document.createElement("li");
         li1.textContent = "li1";
         myDiv.insertAdjacentElement('afterend', li1);
+
+        console.log(li1.childNodes);
     </script>
 </body>
 
