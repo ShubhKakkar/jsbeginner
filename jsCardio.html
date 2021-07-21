@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jsCardio</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .box {
+            display: inline-block;
+            margin: 100px 100px;
+            border: 1px solid black;
+            padding: 50px 50px;
+            width: 300px;
+            height: 400px;
+        }
+
+        .para {
+            margin-top: 10%;
+        }
+
+        .wrapper {}
+
+        .cute {}
+    </style>
+</head>
+
+<body>
+
+    <script>
+        // Create a div
+        const div = document.createElement("div");
+        // Add a class wrapper to it.
+        div.classList.add("wrapper");
+        // Put it into the body.
+        document.body.appendChild(div);
+        // Make an unordered list add three list items with the words "one" , "two" and "three" in it.
+        div.innerHTML = "<ul><li>One</li><li>Two</li><li>Three</li></ul>";
+
+        const image = document.createElement("img");
+        image.src = "https://picsum.photos/id/237/200/300";
+        image.width = "250";
+        image.classList.add("cute");
+        div.appendChild(image);
+
+        const div2 = document.createElement("div");
+        div2.classList.add("myDiv");
+        div2.innerHTML = "<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure omnis ipsam ad accusamus vero soluta cupiditate! Nihil earum culpa non laborum, minus modi voluptatem sapiente repudiandae dolorum officiis odio cum. Recusandae pariatur voluptas sint accusantium nam suscipit nostrum eligendi laborum qui harum, debitis totam neque beatae illo error, culpa ipsam.</p><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure omnis ipsam ad accusamus vero soluta cupiditate! Nihil earum culpa non laborum, minus modi voluptatem sapiente repudiandae dolorum officiis odio cum. Recusandae pariatur voluptas sint accusantium nam suscipit nostrum eligendi laborum qui harum, debitis totam neque beatae illo error, culpa ipsam.</p>";
+
+        const ul = document.querySelector("ul");
+        ul.insertAdjacentElement("beforebegin", div2);
+
+        function bellBoy(name, age) {
+            this.name = name;
+            this.age = age;
+            this.greet = function () {
+                const hml = `<div class="box"><h2>hello my name is ${name} and my age is ${age}.</h2><p class="para"><em> A very good morning to you. How can I help you?</em><p></div>`;
+                document.body.insertAdjacentHTML('afterend', hml);
+            }
+        }
+
+        const cardData = [{ name: "Shubham Kakkar", age: 23 }, { name: "xyz", age: 22 }, { name: "abc", age: 12 }];
+        // cardData.forEach((card, index) => {
+        //     console.table(`The name is ${card.name} and age is ${card.age}`);
+        // })
+
+        cardData.forEach((card, index) => {
+            let bellBoy1 = new bellBoy(card.name, card.age);
+            bellBoy1.greet();
+        })
+
+
+
+
+        console.log(bellBoy1.name);
+        console.log(bellBoy1.greet());
+    </script>
+</body>
+
+</html>
