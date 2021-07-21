@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Elements</title>
+</head>
+<style>
+    .box {
+        color: #008080;
+    }
+
+    .photoBox {
+        height: 300px;
+        width: Auto;
+    }
+</style>
+
+<body>
+    <div class="myDiv"></div>
+    <script>
+        console.log("It's working");
+        const newParagraph = document.createElement('p');
+        newParagraph.textContent = "I am a paragraph";
+        newParagraph.classList.add("box");
+
+        const myImage = document.createElement('img');
+        myImage.setAttribute('src', 'https://picsum.photos/500');
+        myImage.alt = "Beautiful Image";
+        myImage.classList.add('photoBox');
+
+        const myDiv = document.querySelector(".myDiv");
+        myDiv.appendChild(newParagraph);
+        myDiv.appendChild(myImage);
+        myDiv.insertAdjacentText("afterbegin", "I love Pizza");
+        // document.body.insertAdjacentHTML("beforebegin", '<p>I am a brand new title tag.</p>');
+        myDiv.insertAdjacentHTML('beforebegin', '<h1>I am a new heading</h1>');
+
+        const li1 = document.createElement("li");
+        li1.textContent = "li1";
+        myDiv.insertAdjacentElement('afterend', li1);
+    </script>
+</body>
+
+</html>

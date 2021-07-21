@@ -1,48 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM</title>
     <style>
-        *{
-            margin:0px;
-            padding:0px;
-            box-sizing:border-box;
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
         }
-        .box{
+
+        .box {
             background-color: green;
             height: 100px;
             width: 100px;
-            transition:300ms ease-in-out
+            transition: 300ms ease-in-out
         }
-        .box-class{
-            background-color:red;
-            height:200px;
-            width:200px;
-            border-radius:100px;
+
+        .box-class {
+            background-color: red;
+            height: 200px;
+            width: 200px;
+            border-radius: 100px;
             transition: 300ms ease-in-out;
         }
     </style>
 </head>
+
 <body>
     <script>
         // document.querySelector('p').innerText;
-        function init(){
+        function init() {
             // document.querySelector('p').innerText;
             document.querySelector('p').textContent;
             console.log(document.querySelector('h2'));
             console.dir(document.querySelector('h2'));
-            document.querySelector("p").insertAdjacentText('beforeend','I love pizza');
-            document.querySelector(".box").addEventListener('click',()=>{
+            document.querySelector("p").insertAdjacentText('beforeend', 'I love pizza');
+            document.querySelector(".box").addEventListener('click', () => {
                 document.querySelector(".box").classList.toggle("box-class");
             })
         }
-        document.addEventListener('DOMContentLoaded',init);
+        document.addEventListener('DOMContentLoaded', init);
     </script>
     <h2>I am an h2 heading</h2>
     <p>I am a new line</p>
-    <div class="box">I  am a div container.</div>
+    <div class="box">I am a div container.</div>
+
 </body>
+
 </html>
