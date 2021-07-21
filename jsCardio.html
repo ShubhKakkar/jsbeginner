@@ -62,7 +62,7 @@
             this.age = age;
             this.greet = function () {
                 const hml = `<div class="box"><h2>hello my name is ${name} and my age is ${age}.</h2><p class="para"><em> A very good morning to you. How can I help you?</em><p></div>`;
-                document.body.insertAdjacentHTML('afterend', hml);
+                document.body.insertAdjacentHTML('beforeend', hml);
             }
         }
 
