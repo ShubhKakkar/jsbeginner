@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+</head>
+<style>
+    .tab-links{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+    }
+    button{
+        padding:10px;
+        cursor: pointer;
+    }
+    .tab-content{
+        text-align:center;
+        height:50vh;
+        padding:20px;
+        font-weight:bold;
+        border:10px solid #000000;
+    }
+</style>
+<body>
+    <div class="tab-links">
+        <button class="button tab-link" onclick="openPage('JS',this,'Red')">JS</button>
+        <button class="button tab-link defaultOpen" onclick="openPage('CSS',this,'Green')">CSS</button>
+        <button class="button tab-link" onclick="openPage('HTML',this,'Blue')">HTML</button>
+        <button class="button tab-link" onclick="openPage('PHP',this,'Purple')">PHP</button>
+    </div>
+    <div class="tab-data">
+        <div class="tab-content" id="JS"><h2>About JS</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit natus eius praesentium commodi placeat, laudantium voluptatem eos quidem non a doloremque unde suscipit totam possimus minima quibusdam nulla, consequatur obcaecati! Amet, nostrum veniam voluptas tempora provident odio officia laborum nihil! Sed nostrum at eos quasi, dignissimos esse tenetur tempore suscipit.</p>
+        </div>
+        <div class="tab-content CSS" id="CSS"><h2>About CSS</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit natus eius praesentium commodi placeat, laudantium voluptatem eos quidem non a doloremque unde suscipit totam possimus minima quibusdam nulla, consequatur obcaecati! Amet, nostrum veniam voluptas tempora provident odio officia laborum nihil! Sed nostrum at eos quasi, dignissimos esse tenetur tempore suscipit.</p>
+        </div>
+        <div class="tab-content HTML" id="HTML"><h2>About HTML</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit natus eius praesentium commodi placeat, laudantium voluptatem eos quidem non a doloremque unde suscipit totam possimus minima quibusdam nulla, consequatur obcaecati! Amet, nostrum veniam voluptas tempora provident odio officia laborum nihil! Sed nostrum at eos quasi, dignissimos esse tenetur tempore suscipit.</p>
+        </div>
+        <div class="tab-content PHP" id="PHP"><h2>About PHP</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit natus eius praesentium commodi placeat, laudantium voluptatem eos quidem non a doloremque unde suscipit totam possimus minima quibusdam nulla, consequatur obcaecati! Amet, nostrum veniam voluptas tempora provident odio officia laborum nihil! Sed nostrum at eos quasi, dignissimos esse tenetur tempore suscipit.</p>
+        </div>
+    </div>
+    <script>
+        const openPage = (pageName,element,color) =>{
+            // Hide all elements with class="tabcontent" by default */'
+            const tabContent = document.querySelectorAll('.tab-content');
+            tabContent.forEach((tab)=>{
+                tab.style.display="none";
+            // Remove the background color of all tablinks/buttons
+            const tabLink = document.querySelectorAll('.tab-link');
+            tabLink.forEach((link)=>{
+                link.style.backgroundColor = "";
+            // Show the specific tab content
+            document.getElementById(pageName).style.display="block";
+            document.getElementById(pageName).style.backgroundColor=`${color}`;
+            // Add the specific color to the button used to open the tab content
+            element.style.backgroundColor = color;
+            // Get the element with id="defaultOpen" and click on it
+            })
+            })
+        };
+        document.querySelector('.defaultOpen').click();
+    </script>
+</body>
+</html>
