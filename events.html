@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in Javascript</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    .hide {
+        display: none;
+    }
+</style>
+
+<body>
+    <script>
+        console.log("It works");
+        const button = document.createElement("button");
+        button.classList.add("bts");
+        button.textContent = "Click Me";
+        button.setAttribute('data-value', 1000);
+        document.body.append(button);
+        button.addEventListener('click', (event) => {
+            alert("I got clicked");
+            event.stopPropagation();
+            console.log(event.currentTarget.dataset.value);
+        }, { capture: true });
+        const html = "<h1 class='heading-text'>Hello World</h1><button class='hide-heading-text'>Click Me To hide this text</button>";
+        document.body.insertAdjacentHTML("afterbegin", html);
+        document.querySelector(".hide-heading-text").addEventListener('click', () => {
+            document.querySelector(".heading-text").classList.toggle('.hide');
+        });
+        // event.target.dataset.price
+        // event.currentTarget -> wheather clicked on a button or some of its child tag , returns true or false according to that with the eventdata.
+        // event.stopPropogation(); ->To stop a higher state gets clicked too example window don't get tiggered on clicking on button but the button only gets clicked.
+
+        window.addEventListener('click', (event) => {
+            console.log(event.currentTarget);
+        })
+    </script>
+</body>
+
+</html>
