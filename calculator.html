@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    /* Removing the arrow buttons from the input type number. */
+    input[type="text"],
+    #operations,
+    .calculate {
+        display: block;
+        width: 50vw;
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    .solution-box {
+        width: 50vw;
+        height: 30vh;
+        margin: 10px auto;
+        background-color: #808080;
+        display: grid;
+        place-content: center;
+        font-size: 3rem;
+        color: #ffffff;
+    }
+
+    @media screen and (max-width:768px) {
+
+        input[type="text"],
+        #operations,
+        .calculate,
+        .solution-box {
+            width: 70vw;
+        }
+    }
+</style>
+
+<body>
+    <div class="solution-box">
+        <h2 class="solution">0</h2>
+    </div>
+    <input type="text" name="number-1" id="number-1" placeholder="Enter number 1">
+    <input type="text" name="number-2" id="number-2" placeholder="Enter number 2">
+    <select name="operations" id="operations">
+        <option value="add">Addition</option>
+        <option value="sub">Substraction</option>
+        <option value="mul">Multiplication</option>
+        <option value="div">Division</option>
+    </select>
+    <button class="calculate">Calculate</button>
+    <script>
+        const calculateButton = document.querySelector('.calculate');
+        calculateButton.addEventListener('click', function (event) {
+            event.preventDefault();
+            const num1 = parseInt(document.querySelector('#number-1').value);
+            const num2 = parseInt(document.querySelector('#number-2').value);
+            const operationValue = document.querySelector("#operations").value;
+            switch (operationValue) {
+                case "add":
+                    num = num1 + num2;
+                    break;
+                case "sub":
+                    num = num1 - num2;
+                    break;
+                case "mul":
+                    num = num1 * num2;
+                    break;
+                case "div":
+                    num = num1 / num2;
+                    break;
+                default:
+                    num = "Cannot find the value 404";
+            }
+            document.querySelector('.solution').textContent = num;
+            document.querySelector('#number-1').value = "";
+            document.querySelector('#number-2').value = "";
+        })
+    </script>
+</body>
+
+</html>
