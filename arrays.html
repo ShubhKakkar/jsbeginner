@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <script>
+        const names = ['Wes','Kait','Snikkers'];
+        const sportsmen = new Array("sportsman1","sportsman2","sportsman3");
+        console.log(typeof(names));
+        for(var i = 0 ; i< names.length; i++){
+            console.log(names[i]);
+        }
+        console.log(names[names.length-1]);
+        // const namesReverse = names.reverse();
+        console.log(names.slice(0,2)); //Two is not included -> It is a n immutable way thus does not changes the original array.
+        // console.log(names.splice(1,2)); => It is mutable and it means delete two items after the 1 number element.
+        
+        const name = "Shubham Kakkar";
+        // console.log(name.split("").reverse().join("")); -> Reversing a string in JavaScript.
+
+        const bikes = ['a','b','c','d','e','f','g','h','i','j'];
+        console.log(bikes.slice(2,6));
+        console.log(bikes);
+        // const newBikes = bikes;
+        const newBikes = [...bikes]; 
+        newBikes.push('k');
+        console.log(newBikes);
+        console.log(bikes);
+
+        const findName = names.findIndex( name => name === "Kait" );
+        console.log(findName);
+        const search = names.includes("Wes");
+        console.log(search);
+    </script>
+</body>
+</html>
