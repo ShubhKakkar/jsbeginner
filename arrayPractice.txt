@@ -1,0 +1,157 @@
+arrays.html:13 object
+arrays.html:15 Wes
+arrays.html:15 Kait
+arrays.html:15 Snikkers
+arrays.html:17 Snikkers
+arrays.html:19 (2) ["Wes", "Kait"]
+arrays.html:26 (4) ["c", "d", "e", "f"]
+arrays.html:27 (10) ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
+arrays.html:31 (11) ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"]
+arrays.html:32 (10) ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
+arrays.html:35 1
+arrays.html:37 true
+arrays.html:39 (3) ["f", "o", "o"]
+arrays.html:42 (3) [2, 4, 6]
+arrays.html:51 (4) ["greet1", "greet2", "greet3", "greet4"]
+arrays.html:52 (4) ["Good Morning", "Good Afternoon", "Good Evening", "Good Night"]
+arrays.html:53 (14) ["S", "h", "u", "b", "h", "a", "m", " ", "K", "a", "k", "k", "a", "r"]
+arrays.html:55 (4) [2, 3, 4, 5]
+names.slice(0);
+(3) ["Wes", "Kait", "Snikkers"]
+names.slice(0,2);
+(2) ["Wes", "Kait"]
+names.slice();
+(3) ["Wes", "Kait", "Snikkers"]
+Array.from("hello");
+(5) ["h", "e", "l", "l", "o"]
+const newArray = Array.from("hii , how are you ?");
+undefined
+const newArray = Array.from("hiihello");
+VM1439:1 Uncaught SyntaxError: Identifier 'newArray' has already been declared
+const newArray1 = Array.from("hiihello");
+undefined
+const newArray1
+VM1485:1 Uncaught SyntaxError: Missing initializer in const declaration
+newArray1
+(8) ["h", "i", "i", "h", "e", "l", "l", "o"]
+newArray1.includes("h);
+VM1611:1 Uncaught SyntaxError: Invalid or unexpected token
+newArray1.includes("h");
+true
+newArray1.findIndex(element => element === "o");
+7
+newArray1.findIndex(element => element === "e");
+4
+newArray1.reverse();
+(8) ["o", "l", "l", "e", "h", "i", "i", "h"]
+numbers = [0,1,2,3,4,5,6,7,8,9,10];
+(11) [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+numbers.filter
+ƒ filter() { [native code] }
+numbers.filter(number => number>1);
+(9) [2, 3, 4, 5, 6, 7, 8, 9, 10]
+numbers
+(11) [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+numbers.concat
+ƒ concat() { [native code] }
+numberMore = new Array(11,12,13,14,15,16,17,18,19,20);
+(10) [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+numbers.concat(numberMore);
+(21) [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+numbers.push(0);
+12
+numbers.pop();
+0
+Array.from(numbers , x =x+1);
+VM3194:1 Uncaught ReferenceError: x is not defined
+    at <anonymous>:1:25
+(anonymous) @ VM3194:1
+Array.from(numbers);
+(11) [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const numbersModified = Array.from(numbers,(x)=>x+1);
+undefined
+console.log(numbersModified);
+VM3446:1 (11) [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+undefined
+numbersModfied.filter(number => number<11);
+VM3632:1 Uncaught ReferenceError: numbersModfied is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM3632:1
+numbersModified.filter(number => number<11);
+(10) [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+numbers.shift(11);
+0
+numbers
+(10) [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+numbers.unshift(0);
+11
+numbersnumbers.unshift(12);
+VM3926:1 Uncaught ReferenceError: numbersnumbers is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM3926:1
+numbers.unshift(12);
+12
+numbers
+(12) [12, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+numbers.shift(12);
+12
+numbers
+(11) [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+document.body.bgColor = "black";
+"black"
+document.body.insertAdjacentHTML = "<h1>I am a Heading</h1>"
+"<h1>I am a Heading</h1>"
+document.body.color = "white";
+"white"
+document.body.color = "white";
+"white"
+document.body.insertAdjacentHTML = "<h1>I am a Heading</h1>"
+"<h1>I am a Heading</h1>"
+document.body.insertAdjacentHTML = (afterbegin,"<h1>I am a Heading</h1>");
+VM4554:1 Uncaught ReferenceError: afterbegin is not defined
+    at <anonymous>:1:37
+(anonymous) @ VM4554:1
+document.body.insertAdjacentHTML = ('afterbegin',"<h1>I am a Heading</h1>");
+"<h1>I am a Heading</h1>"
+document.insertAdjacentHTML = ('afterbegin',"<h1>I am a Heading</h1>");
+"<h1>I am a Heading</h1>"
+document.body.insertAdjacentHTML = ('afterbegin',"<h1>I am a Heading</h1>");
+"<h1>I am a Heading</h1>"
+document.body.insertAdjacentHTML('afterbegin','<h1>I am a Heading</h1>');
+VM4676:1 Uncaught TypeError: document.body.insertAdjacentHTML is not a function
+    at <anonymous>:1:15
+(anonymous) @ VM4676:1
+document.append('<h1>I am a Heading</h1>');
+VM4741:1 Uncaught DOMException: Failed to execute 'append' on 'Document': Nodes of type '#text' may not be inserted inside nodes of type '#document'.
+    at <anonymous>:1:10
+(anonymous) @ VM4741:1
+document.body.append('<h1>I am a Heading</h1>');
+undefined
+document.body.bgColor = "white";
+"white"
+document.body.append('<h1>I am a Heading</h1>');
+undefined
+document.body.insertAdjacentHTML('afterbegin','<h1>I am a Heading</h1>');
+VM4897:1 Uncaught TypeError: document.body.insertAdjacentHTML is not a function
+    at <anonymous>:1:15
+(anonymous) @ VM4897:1
+document.body.innerHTML('<h1>I am a Heading</h1>');
+VM4921:1 Uncaught TypeError: document.body.innerHTML is not a function
+    at <anonymous>:1:15
+(anonymous) @ VM4921:1
+document.body.innerHTML ='<h1>I am a Heading</h1>';
+"<h1>I am a Heading</h1>"
+document.body.innerHTML ='<h1 class="heading">I am a Heading</h1>';
+"<h1 class=\"heading\">I am a Heading</h1>"
+document.querySelector('.heading').insertAdjacentHTML('afterbegin','<p class="paragraph-element">I am a new paragraph</p>');
+undefined
+document.querySelector('.heading').insertAdjacentHTML('afterend','<p class="paragraph-element">I am a new paragraph</p>');
+undefined
+document.body.append('<h1>I am a Heading</h1>');
+undefined
+names
+(3) ["Wes", "Kait", "Snikkers"]
+names.indexOf("Wes");
+0
+names.findIndex(name => name === "Wes");
+0
