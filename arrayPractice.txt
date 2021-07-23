@@ -155,3 +155,4 @@ names.indexOf("Wes");
 0
 names.findIndex(name => name === "Wes");
 0
+names.find(name => name.includes("W"));
