@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const myMap = new Map();
+    myMap.set('name','Wes');
+    // myMap.age = 100;
+    myMap.set(100,'This is a number');
+    const person = {
+        fname:'Shubham',
+        lname:'Kakkar',
+        age:23,
+    }
+    Object.keys(person);
+    // console.log(Object.keys(person) , Object.values(person));
+    for (let [key, value] of Object.entries(person)) {
+    console.log(key, value);
+    // JSON.parse(objectName);
+    // JSON.stringify(objectName);
+}
+</script>
+</html>
