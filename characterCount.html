@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Count Exercise</title>
+</head>
+<body>
+    Technologies
+References & Guides
+Feedback
+Search MDN
+Site search... (Press "/" to focus)
+Resources for developers, by developers.
+Web Technologies
+Learn Web Development
+Developer Tools
+Hacks Blog
+Read more at hacks.mozilla.org
+
+Spring Cleaning MDN: Part 1
+As we’re all aware by now, we made some big platform changes at the end of 2020. Whilst the big move has happened, it’s given us a great opportunity to clear out the cupboards and closets. The post Spring Cleaning MDN: Part 1 appeared first on Mozilla Hacks - the Web developer blog.
+
+Posted Tuesday, July 20, 2021 by Ruth John
+
+Getting lively with Firefox 90
+As the summer rolls around for those of us in the northern hemisphere, temperatures are high and unwinding with a cool ice tea is high on the agenda. Isn't it lucky then that Background Update is here for Windows, which means Firefox can update even if it's not running. We can just sit back and relax!Also this release we see a few nice JavaScript additions, including private fields and methods for classes, and the at() method for Array, String and TypedArray global objects.This blog post just provides a set of highlights.The post Getting lively with Firefox 90 appeared first on Mozilla Hacks - the Web developer blog.
+
+Posted Tuesday, July 13, 2021 by Ruth John
+
+Implementing Private Fields for JavaScript
+When implementing a language feature for JavaScript, an implementer must make decisions about how the language in the specification maps to the implementation. Private fields is an example of where the specification language and implementation reality diverge, at least in SpiderMonkey– the JavaScript engine which powers Firefox. To understand more, I’ll explain what private fields are, a couple of models for thinking about them, and explain why our implementation diverges from the specification language.The post Implementing Private Fields for JavaScript appeared first on Mozilla Hacks - the Web developer blog.
+
+Posted Tuesday, June 8, 2021 by Matthew Gaudet
+
+Looking fine with Firefox 89
+Firefox 89 has smartened up and brings with it a slimmed-down, slightly more minimalist interface.Along with this new look, we get some great styling features including a force-colours feature for media queries and better control over how fonts are displayed. The long-awaited top-level await keyword for JavaScript modules is now enabled, as well as the PerformanceEventTiming interface, which is another addition to the performance suite of APIs: 89 really has been working out!The post Looking fine with Firefox 89 appeared first on Mozilla Hacks - the Web developer blog.
+
+Posted Tuesday, June 1, 2021 by Chris Mills
+
+Improving Firefox stability on Linux
+Roughly a year ago at Mozilla we started an effort to improve Firefox stability on Linux. This effort quickly became an example of good synergies between FOSS projects.The post Improving Firefox stability on Linux appeared first on Mozilla Hacks - the Web developer blog.
+
+Posted Wednesday, May 19, 2021 by Gabriele Svelto
+
+Help improve MDN Web Docs
+All parts of MDN (docs and the site itself) are created by an open community of developers. Please join us! Pick one of these ways to help:
+
+Getting started
+Contributing to MDN content
+Contributing to the MDN codebase
+Updating browser compatibility data
+<script>
+    const text = document.body.innerText;
+    // console.log(text);
+    const wordArray = Array.from(text);
+    // console.log(wordArray.length);
+    const filterArray = wordArray.filter(letter => {
+        if(letter.match(/[a-zA-Z0-9]/)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    });
+    const lowerArray =  filterArray.map((char)=>{
+        return char.toLowerCase();
+    });
+
+    const instanceCounter = lowerArray.reduce((acc,cur)=>{
+        acc[cur]
+        // If exists
+        ? acc[cur] = acc[cur]+1
+        // if does not exists
+        : acc[cur] = 1;
+        return acc;
+    },{});
+    
+    console.log(filterArray);
+    console.log(lowerArray);
+    console.log(instanceCounter);
+</script>
+</body>
+</html>

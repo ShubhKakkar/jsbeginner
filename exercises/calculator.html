@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <title>Calculator</title>
+  </head>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+    .main {
+      display: grid;
+      height: 100vh;
+      width: 100vw;
+      place-content: center;
+    }
+    .wrapper {
+      background-color: #000000;
+      height: 700px;
+      width: 500px;
+      border: 10px solid #000000;
+      border-radius: 10px;
+      filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2));
+    }
+    .show-result {
+      height: 150px;
+      width: 100%;
+      background-color: #ff9900;
+      border-radius: 10px 10px 0px 0px;
+    }
+    .numbers {
+      padding: 20px;
+      position: relative;
+    }
+    input[type="number"] {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0px;
+      border-radius: 5px;
+    }
+    input[type="number"],
+    .operation:focus {
+      outline-color: #ff9900;
+    }
+    .submit-me {
+      position: fixed;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    .submit-me:hover {
+      cursor: pointer;
+      opacity: 0.85;
+      transition: 300ms ease-in-out;
+    }
+    .solution {
+      text-align: center;
+      position: relative;
+      top: 35%;
+      font-size: 3rem;
+    }
+    .hide {
+      display: none;
+    }
+    label {
+      color: #ffffff;
+      display: block;
+      text-align: right;
+      font-size: 1.2rem;
+    }
+    .operation {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0px;
+      border-radius: 5px;
+    }
+  </style>
+  <body>
+    <div class="main">
+      <div class="wrapper">
+        <div class="show-result"><h2 class="solution">0</h2></div>
+        <div class="numbers">
+          <form class="form-group">
+            <input
+              type="number"
+              name="input-1"
+              id="input-1"
+              placeholder="Enter the number 1"
+            />
+            <input
+              type="number"
+              name="input-2"
+              id="input-2"
+              placeholder="Enter the number 2"
+            />
+            <select name="operation" id="operation" class="operation">
+              <option value="add">Addition</option>
+              <option value="sub">Substraction</option>
+              <option value="mul" selected>Multiplication</option>
+              <option value="div">Division</option>
+            </select>
+            <button type="submit" class="submit-me">Calculate</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      // document.querySelector('.drop-down').style.display = "block";
+      const formGroup = document.querySelector(".form-group");
+      formGroup.addEventListener("submit", (event) => {
+        event.preventDefault();
+        // console.log(event);
+        const num1 = parseInt(document.querySelector("#input-1").value);
+        const num2 = parseInt(document.querySelector("#input-2").value);
+        const selectElement = document.querySelector("#operation").value;
+        //   console.log(selectElement);
+        switch (selectElement) {
+          case "add":
+            num = num1 + num2;
+            document.querySelector(".solution").textContent = num;
+            break;
+          case "sub":
+            num = num1 - num2;
+            document.querySelector(".solution").textContent = num;
+            break;
+          case "mul":
+            num = num1 * num2;
+            document.querySelector(".solution").textContent = num;
+            break;
+          case "div":
+            num = num1 / num2;
+            document.querySelector(".solution").textContent = num;
+            break;
+          default:
+            num = 404;
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const inventory = [
+        { type: "Shirt", price: 2000 },
+        { type: "Pants", price: 1000 },
+        { type: "Suit", price: 5000 },
+        { type: "Shoes", price: 1500 },
+      ];
+      const options = {
+        // Shirts:0,
+        // Pants:0,
+        // Suit:0,
+        // Shoes:0,
+      }
+      const finalPrice = inventory.reduce((acc,cur) => {
+        return acc+cur.price;
+      },0);
+      console.log(finalPrice);
+    </script>
+  </body>
+</html>

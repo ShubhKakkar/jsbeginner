@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+  </head>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+    body {
+      height: 100vh;
+      width: 100vw;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)),
+        url(images/time.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: #ffffff;
+      font-family: sans-serif;
+    }
+    .todo-heading {
+      margin-top: 1rem;
+    }
+    input {
+      display: block;
+      width: 50%;
+      padding: 1rem;
+      margin: 1rem auto;
+      border-radius: 5px;
+    }
+    .submit-btn {
+      padding: 1rem;
+      display: block;
+      width: 50%;
+      margin: 1rem auto;
+    }
+    .lists {
+      text-align: center;
+      width: 30%;
+      margin: 1rem auto;
+    }
+    .list-item {
+      display: inline-block;
+      padding: 10px;
+      margin: 10px 0px;
+      list-style: none;
+      font-size: 1.4rem;
+      width: 50%;
+    }
+    .delete-me {
+      margin-left: 10px;
+      padding: 10px;
+      background-color: #000000;
+      color: #ffffff;
+      width: 30%;
+    }
+    .delete-me:hover {
+      background-color: #808080;
+      transition: 300ms ease-in-out;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <h1 class="todo-heading"><center>Todo APP</center></h1>
+    <form class="todo">
+      <input
+        type="text"
+        name="list-input"
+        id="list-input"
+        placeholder="Enter your todo here"
+      />
+      <button type="submit" class="submit-btn">Submit Me</button>
+    </form>
+    <div class="list-box">
+      <ul class="lists"></ul>
+    </div>
+  </body>
+  <script>
+    const items = [];
+    const todo = document.querySelector(".todo");
+    //Show Value
+    todo.addEventListener("submit", (event) => {
+      event.preventDefault();
+      // alert("I got clicked");
+      const listInput = document.querySelector("#list-input").value;
+      const lists = document.querySelector(".lists");
+      if (!listInput) {
+        return;
+      } else {
+        const html = `<li class="list-item">${listInput}</li><button class="delete-me">Remove</button>`;
+        lists.insertAdjacentHTML("beforeend", html);
+        document.querySelector("#list-input").value = "";
+        //Delete Value
+        const deleteButton = document.querySelectorAll(".delete-me");
+        // console.log(deleteButton);
+        deleteButton.forEach((button) => {
+          button.addEventListener("click", (event) => {
+            event.currentTarget.previousElementSibling.style.display = "none";
+            event.currentTarget.style.display = "none";
+          });
+        });
+      }
+    });
+  </script>
+</html>
