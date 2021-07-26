@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic List</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            height: 10vh;
+            width: 100vw;
+            display: grid;
+            place-items: center;
+        }
+
+        .list-box {
+            height: 5vh;
+            width: 50vw;
+            display: grid;
+            grid-template-columns: 85% 1fr 1fr;
+            grid-template-rows: 1fr;
+            grid-column-gap: 10px;
+        }
+
+        .list-item-box {
+            height: 80vh;
+            width: 60vw;
+            /* background-color: #000000; */
+            margin: auto auto;
+        }
+
+        .list-li {
+            list-style: none;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        @media screen and (max-width:768px) {
+            .list-box {
+                width: 90vw;
+                grid-template-columns: 75% 1fr 1fr;
+                grid-column-gap: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <form class="list-box">
+            <input type="text" name="list-add" id="list-add" placeholder="Add in your list">
+            <button class="add-list">+</button>
+            <button class="remove-list">-</button>
+        </form>
+    </div>
+    <div class="list-item-box">
+        <ul class="list-ul">
+
+        </ul>
+    </div>
+    <script>
+        // Add in list
+        document.querySelector(".add-list").addEventListener('click', (event) => {
+            event.preventDefault();
+            const listElement = document.querySelector('#list-add').value;
+            const html = `<li class='list-li'>${listElement}</li>`;
+            const ul = document.querySelector('.list-ul');
+            ul.insertAdjacentHTML('afterbegin', html);
+            document.getElementById('list-add').value = "";
+        })
+        //Delete from List
+        document.querySelector(".remove-list").addEventListener('click', (event) => {
+            event.preventDefault();
+            document.querySelector(".list-ul").firstChild.remove();
+        })
+    </script>
+</body>
+
+</html>
