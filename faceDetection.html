@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Detection</title>
+</head>
+<style>
+    *{
+        margin:0px;
+        padding:0px;
+        box-sizing: border-box;
+    }
+    .wrapper{
+        position:relative;
+        min-height:100vh;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+    }
+    .wrapper>* {
+        grid-column: 1;
+        grid-row:1;
+    }
+    /* .webcam{
+
+    }
+    .video{
+
+    } */
+    .face{
+        position:absolute;
+    }
+</style>
+<body>
+    <div class="wrapper">
+        <video src="" class="webcam"></video>
+        <canvas class="video"></canvas>
+        <canvas class="face"></canvas>
+    </div>
+    <script src="pixelatedFace.js"></script>
+</body>
+</html>

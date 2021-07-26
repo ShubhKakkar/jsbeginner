@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarcastic Text</title>
+</head>
+<body>
+    <textarea name="textbox" id="textbox" cols="30" rows="10"></textarea>
+    <script>
+        const dictionary = { "a": "m", "b": "h", "c": "t", "d": "f", "e": "g", "f": "k", "g": "b", "h": "p", "i": "j", "j": "w", "k": "e", "l": "r", "m": "q", "n": "s", "o": "l", "p": "n", "q": "i", "r": "u", "s": "o", "t": "x", "u": "z", "v": "y", "w": "v", "x": "d", "y": "c", "z": "a", "A": "M", "B": "H", "C": "T", "D": "F", "E": "G", "F": "K", "G": "B", "H": "P", "I": "J", "J": "W", "K": "E", "L": "R", "M": "Q", "N": "S", "O": "L", "P": "N", "Q": "I", "R": "U", "S": "O", "T": "X", "U": "Z", "V": "Y", "W": "V", "X": "D", "Y": "C", "Z": "A" }
+        const sarcasticTextGenerator = (text) => {
+            // console.log(text);
+            const newText = text.map((alpha,index)=>{
+                if(dictionary[alpha]){
+                    return dictionary[alpha];
+                }
+                else if(index%2==0){
+                    return alpha.toUpperCase();
+                 }
+                 else{
+                     return alpha.toLowerCase();
+                 }
+            });
+            console.log(newText);
+        }
+        document.querySelector('#textbox').addEventListener('input',(event)=>{
+            const text = Array.from(event.target.value);
+            sarcasticTextGenerator(text);
+        })
+    </script>
+</body>
+</html>
