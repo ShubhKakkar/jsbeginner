@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+    
+    <script>
+        function Pizza(){
+            return new Promise(function(resolve,reject){
+                setTimeout(()=>{
+                    error = false;
+                    if(!error){
+                        console.log("Your Pizza has been sent");
+                        resolve();
+                    }
+                    else{
+                        console.log(`Sorry we were not able to send your pizza due to this ${error} error.`);
+                        reject('Sorry not fulfilled');
+                    }
+                },2000);
+            });
+        }
+        Pizza().then(function(){
+            console.log("I got it");
+        }).catch(function(){
+            console.log("Too Bad Bro");
+        });
+
+
+        const greet = (name='Shubham Kakkar') =>{
+            return  new Promise(function(resolve,reject){
+                setTimeout(()=>{
+                    // console.log(this.name);
+                    if(!name.includes("Wes")){
+                        console.log(`Have a nice day ${name}`);
+                        resolve();
+                    }
+                    else{
+                        console.log(error);
+                        reject();
+                    }
+                },2000)
+            })
+        }
+        greet().then(()=>{
+            console.log("Yeahhhh my name got printed.");
+        }).then(()=>{
+            greet("Wes Bos.");
+        }).then(()=>{
+            greet("New Name.")
+        }).catch(function(){
+            console.log("Too Bad Bro");
+        });
+
+    </script>
+</body>
+</html>
