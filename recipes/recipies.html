@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <style>
+        input[type="text"]{
+            padding:10px;
+            width:50%;
+            display: block;
+            margin:auto auto;
+        }
+        .click-me{
+            display:block;
+            width:50vw;
+            margin:1rem auto;
+            padding:10px;
+            background-color: #ffb414;
+            /* color: #ffffff; */
+            /* border-radius: 10px; */
+        }
+    </style>
+</head>
+<body>
+    <input type="text" name="recipe" id="recipe" placeholder="Enter your recipe name here">
+    <button class="click-me">Fetch Recipes</button>
+    <script>
+        const baseEndPoint = "http://www.recipepuppy.com/api/";
+        async function fetchRecipe(query){
+            const recipe = await fetch(`${baseEndPoint}?q=${query}`);
+            const data = await recipe.json();
+        }
+        fetchRecipe('onions');
+        document.querySelector('.click-me').addEventListener('click',()=>{
+            console.log('I got clicked');
+        })
+    </script>
+</body>
+</html>

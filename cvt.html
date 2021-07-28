@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CVT</title>
+</head>
+<body>
+    <script>
+        var url = "https://api.covid19api.com/summary";
+        fetch(url).then((data) => {
+            console.log(data);
+            return data.json();
+        }).then((actualData) => {
+            console.log(actualData);
+            
+            for(i = 0;i<=(actualData.Countries.length);i++){
+                const html = `<table border="1px" cellspacing="10px" cellpadding="10px"><tr><th>Country Name</th><th>Active Cases</th></tr><tr><td>${actualData.Countries[i]?.Country}</td><td>${actualData.Countries[i]?.TotalConfirmed}</td></tr></table>`;
+                // console.log(html);
+                document.body.insertAdjacentHTML('afterbegin',html);
+            }
+        }).catch((error) => console.log(`The error is ${error}.`));
+    </script>
+</body>
+</html>

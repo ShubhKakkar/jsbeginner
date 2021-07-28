@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>Typer</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: 'Josefin Sans', sans-serif;
+      }
+      .main-div {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        background-color: #3498db;
+      }
+      .center-div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #ffffff;
+      }
+      h1{
+          text-transform: capitalize;
+          margin-bottom: 30px;
+          text-shadow: 1px 2px 3px #2980b9;
+          font-size:2.1rem;
+      }
+      textarea{
+          background-color: #444;
+          box-shadow: 0px 0px 1px rgba(0,0,0,0.5);
+          border-radius: 10px 10px 0px 0px;
+          border:20px solid #34495e;
+          color:#ffffff;
+          font-size: 1.3rem;
+      }
+      .mainButton{
+          padding: 10px 20px;
+          border-radius: 20px;
+          border: 5px solid #2980b9;
+          background: #ecf0f1;
+          font-size: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-div">
+      <div class="center-div">
+        <h1>Welcome to the typer, the typing tester.</h1>
+        <h2 class="message">Message will be displayed here</h2>
+        <br />
+        <textarea
+          name="myWords"
+          id="myWords"
+          cols="100"
+          rows="10"
+          class="myWords",
+          placeholder="Remember, be nice!",
+        ></textarea>
+        <br />
+        <button class="mainButton">Start</button>
+      </div>
+    </div>
+    <script>
+        const messages = ["My name is Shubham Kakkar and I am a Website Developer","Hiii I am a cool person living in Ajmer"];
+        const messageBox = document.querySelector('.message');
+        const typeWords = document.querySelector('.myWords');
+        const button = document.querySelector('.mainButton');
+
+        const playGame = () => {
+            let randomNumber = Math.floor(Math.random()*messages.length);
+            messageBox.textContent = messages[randomNumber];
+            let date = new Date();
+            let startTime = date.getTime();
+            button.textContent = 'Done';
+        }
+
+        const endGame = () => {
+            let date = new Date();
+            let endTime = date.getTime();
+            let startTime = playGame.startTime;
+            let totalTime = (endTime-startTime)/1000;
+            // messageBox.innerText = totalTime;
+            let totalStr = typeWords.value;
+            let totalWords = totalStr.split("").length;
+            let wordCount = totalWords/totalTime;
+            messageBox.innerText = `Your word count is ${wordCount} and total words written by you are ${totalWords}`;
+        }
+
+        button.addEventListener('click',function(){
+            if(this.innerText == "Start"){
+                typeWords.disabled == "true";
+                playGame();
+            }
+            else if(this.innerText = "Done"){
+                typeWords.disabled = "false";
+                button.innerText = "Start";
+                endGame();
+            }
+        })
+    </script>
+  </body>
+</html>

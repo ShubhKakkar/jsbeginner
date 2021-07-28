@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>asyncAwait</title>
+  </head>
+  <body>
+    <script>
+      // debugger
+      async function check() {
+        console.log("Starting");
+        function wait(time) {
+            return new Promise((resolve,reject) => {
+                setTimeout(()=>{
+                    console.log("Running");
+                    resolve();
+                },time);
+            });
+        };
+        await wait(2000);
+        console.log("Finished");
+      }
+      check();
+
+      function animationFunction(){
+          return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                console.log("Animation Running");
+                resolve();
+            },2000);
+          });
+      }
+      async function animate(){
+          console.log("Starting Animation");
+          await animationFunction();
+          console.log("Animation End");
+      }
+      animate();
+    </script>
+  </body>
+</html>
